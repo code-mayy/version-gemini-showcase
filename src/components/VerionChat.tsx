@@ -12,7 +12,11 @@ interface Message {
   timestamp: Date;
 }
 
-export const VerionChat = () => {
+interface VerionChatProps {
+  onProcessingChange?: (isProcessing: boolean) => void;
+}
+
+export const VerionChat = ({ onProcessingChange }: VerionChatProps) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -34,6 +38,7 @@ export const VerionChat = () => {
     setMessage("");
     setHasStartedChat(true);
     setIsProcessing(true);
+    onProcessingChange?.(true);
 
     // Simulate AI response
     setTimeout(() => {
@@ -45,6 +50,7 @@ export const VerionChat = () => {
       };
       setMessages(prev => [...prev, aiResponse]);
       setIsProcessing(false);
+      onProcessingChange?.(false);
     }, 2000);
   };
 

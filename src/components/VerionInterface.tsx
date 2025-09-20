@@ -5,6 +5,7 @@ import { VerionChat } from "./VerionChat";
 
 export const VerionInterface = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
 
   return (
     <div className="flex h-screen w-full bg-gradient-bg overflow-hidden">
@@ -18,8 +19,9 @@ export const VerionInterface = () => {
       <div className="flex-1 flex flex-col min-w-0">
         <VerionHeader 
           onToggleSidebar={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+          isProcessing={isProcessing}
         />
-        <VerionChat />
+        <VerionChat onProcessingChange={setIsProcessing} />
       </div>
     </div>
   );
