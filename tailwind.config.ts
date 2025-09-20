@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -47,6 +48,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // AI Interface specific colors
+        "chat-input": "hsl(var(--chat-input))",
+        "chat-input-border": "hsl(var(--chat-input-border))",
+        "sidebar-bg": "hsl(var(--sidebar-bg))",
+        "suggestion-card": "hsl(var(--suggestion-card))",
+        "suggestion-card-hover": "hsl(var(--suggestion-card-hover))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -84,6 +91,20 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "slide-up": "slide-up 0.4s ease-out",
+        "slide-in-left": "slide-in-left 0.3s ease-out",
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-bg": "var(--gradient-bg)",
+        "gradient-card": "var(--gradient-card)",
+      },
+      boxShadow: {
+        "ai": "var(--shadow-ai)",
+        "card-ai": "var(--shadow-card)",
+        "glow": "var(--shadow-glow)",
       },
     },
   },
