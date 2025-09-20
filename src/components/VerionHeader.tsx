@@ -20,7 +20,7 @@ export const VerionHeader = ({ onToggleSidebar }: VerionHeaderProps) => {
         </Button>
         
         <div className="flex items-center gap-2">
-          <h1 className="text-xl font-semibold text-gradient">Verion</h1>
+          <h1 className="text-xl font-semibold text-gradient animate-bulge">Verion</h1>
           <Button
             variant="ghost"
             className="text-sm text-muted-foreground hover:text-foreground gap-1 px-2"

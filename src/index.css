@@ -46,6 +46,11 @@ All colors MUST be HSL. Inspired by modern AI interfaces.
     --suggestion-card: 218 16% 14%;
     --suggestion-card-hover: 218 16% 18%;
 
+    /* Processing states */
+    --processing-primary: 45 93% 58%;
+    --processing-secondary: 30 100% 60%;
+    --processing-tertiary: 15 100% 62%;
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(218 16% 6%));
@@ -147,6 +152,39 @@ All colors MUST be HSL. Inspired by modern AI interfaces.
     }
   }
 
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  @keyframes bulge {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes color-shift {
+    0% {
+      background: var(--gradient-primary);
+    }
+    33% {
+      background: linear-gradient(135deg, hsl(var(--processing-primary)), hsl(var(--processing-secondary)));
+    }
+    66% {
+      background: linear-gradient(135deg, hsl(var(--processing-secondary)), hsl(var(--processing-tertiary)));
+    }
+    100% {
+      background: linear-gradient(135deg, hsl(var(--processing-tertiary)), hsl(var(--processing-primary)));
+    }
+  }
+
   /* Utility classes */
   .ai-float {
     animation: float 6s ease-in-out infinite;
@@ -166,6 +204,13 @@ All colors MUST be HSL. Inspired by modern AI interfaces.
 
   .text-gradient {
     background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-processing {
+    background: linear-gradient(135deg, hsl(var(--processing-primary)), hsl(var(--processing-secondary)), hsl(var(--processing-tertiary)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
